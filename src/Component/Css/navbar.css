@@ -1,0 +1,78 @@
+.header {
+    color: white;
+    border-bottom: 1px solid white;
+    padding: 23px;
+}
+
+.n-head {
+    display: flex;
+    animation: headline 2s 1;
+    border-bottom: 2px solid;
+    width: 214px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.n-head:hover {
+    color: white;
+    box-shadow: 0 0 10px 0 #0750b1 inset, 0 0 10px 4px #3a46f0;
+    transition: 1s;
+}
+
+@keyframes headline {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 214px;
+    }
+}
+
+.icon-head {
+    width: 52px;
+    border-radius: 5px;
+    height: 47px;
+}
+
+.m-head {
+    margin-left: 297px;
+    margin-top: -35px;
+}
+
+.link-page {
+    list-style: none;
+    margin-right: 23px;
+}
+
+.a-link-page {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: 1s;
+}
+
+.a-link-page:hover {
+    color: yellowgreen;
+    transition: 0s;
+}
+
+.sl-head {
+    direction: rtl;
+    margin-top: -50px;
+}
+
+.third {
+    border-color: #171e24;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 40px 40px #01080e inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    transition: 1s;
+}
+
+.third:hover {
+    color: white;
+    box-shadow: 0 0 10px 0 #0750b1 inset, 0 0 10px 4px #3a46f0;
+    transition: 1s;
+}

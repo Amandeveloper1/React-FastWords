@@ -1,0 +1,21 @@
+.footer {
+    border-top: 2px solid white;
+    margin-top: 170px;
+}
+
+.f-head-f {
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.copy-r-set {
+    text-align: center;
+    margin: 15px 0px;
+    color: white;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.copy-r-set:hover {
+    color: yellowgreen;
+}

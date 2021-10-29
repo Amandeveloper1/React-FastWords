@@ -1,0 +1,176 @@
+.back-content {
+    display: flex;
+    cursor: default;
+}
+
+.content-site {
+    margin-top: 200px;
+    padding-left: 20px;
+    color: white;
+    width: 621px;
+}
+
+.c-text-s {
+    margin-top: 11px;
+    font-size: 20px;
+}
+
+.para-content {
+    transition: 1s;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.para-content:hover {
+    transition: 0s;
+    color: chartreuse;
+    text-shadow: #0f0;
+}
+
+.c-button-s {
+    margin-top: 20px;
+}
+
+.typewordsend {
+    color: white;
+    text-decoration: none;
+}
+
+.geeks::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 2px solid transparent;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.img-content {
+    margin-top: 100px;
+    margin-left: 100px;
+    border: 2px solid;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.login-logo {
+    margin-bottom: 30px;
+    width: 132px;
+    border-bottom: 2px solid;
+    color: white;
+    white-space: nowrap;
+    animation: login-logos 3s 1;
+    transition: 1s;
+}
+
+@keyframes login-logos {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 132px;
+    }
+}
+
+.login-logo:hover {
+    color: yellowgreen;
+}
+
+.third {
+    border-color: #171e24;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 40px 40px #01080e inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    transition: 1s;
+}
+
+.third:hover {
+    color: white;
+    box-shadow: 0 0 10px 0 #0750b1 inset, 0 0 10px 4px #3a46f0;
+    transition: 1s;
+}
+
+.login-f {
+    display: grid;
+}
+
+.input-user {
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    padding: 4px;
+    border-bottom: 2px solid yellowgreen;
+    color: white;
+    margin-bottom: 20px;
+    outline: none
+}
