@@ -19,3 +19,8 @@
 .copy-r-set:hover {
     color: yellowgreen;
 }
+
+.logo-o-f:hover {
+    color: yellowgreen;
+    cursor: pointer;
+}

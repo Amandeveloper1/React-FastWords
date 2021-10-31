@@ -5,17 +5,17 @@ import img1 from './photos/headicon.png';
 
 export default function Navbar(props) {
 
-    const setnowporgress = ()=>{
+    const setnowporgress = () => {
         props.progress(10)
         setTimeout(() => {
             props.progress(50)
             props.progress(100)
         }, 100);
     }
-   
+
     return (
         <>
-        
+
             <div className="header container">
                 <div className="n-head">
                     <img className="icon-head" src={img1} alt="" />
@@ -37,8 +37,12 @@ export default function Navbar(props) {
                 </div>
 
                 <div className="sl-head">
-                    <button className="btn third" >Singup</button>
-                    <button className="btn third me-1">Login</button>
+                    {!localStorage.getItem('token') ? <>
+                        <Link onClick={() => setnowporgress()} className="text-d" to="/signup">  <button className="btn third" >Signup</button></Link>
+                        <Link onClick={() => setnowporgress()} className="text-d" to="/"><button className="btn third me-1">Login</button></Link>
+                    </> : <>
+                        <Link onClick={() => setnowporgress()} className="text-d" to="/account"><button className="btn third me-1">Account</button></Link>
+                    </>}
                 </div>
             </div>
         </>

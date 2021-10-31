@@ -4,7 +4,7 @@ import './Css/competition.css';
 export default function Competition() {
     return (
         <>
-            <div className="container">
+            <div className="container"  style={{marginBottom: "80vh"}} >
                 <div className="firstone">
                     <div>
                         No Competition are avilable.

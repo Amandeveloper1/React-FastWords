@@ -39,8 +39,10 @@
 }
 
 #active {
-    background: #9a9a9f;
+    background: #202022;
     border-radius: 5px;
+    padding: 2px;
+    border: 1px solid;
 }
 
 .correct {

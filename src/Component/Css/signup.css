@@ -1,0 +1,68 @@
+.signup-c {
+    justify-content: center;
+    display: flex;
+}
+
+.img-content {
+    width: 400px;
+    margin-top: 80px;
+    margin-left: 100px;
+    border: 2px solid;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.signup-logo {
+    margin-bottom: 30px;
+    width: 148px;
+    border-bottom: 2px solid;
+    color: white;
+    white-space: nowrap;
+    animation: signup-logos 3s 1;
+    transition: 1s;
+}
+
+@keyframes signup-logos {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 148px;
+    }
+}
+
+.login-logo:hover {
+    color: yellowgreen;
+}
+
+.third {
+    border-color: #171e24;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 40px 40px #01080e inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    transition: 1s;
+}
+
+.third:hover {
+    color: white;
+    box-shadow: 0 0 10px 0 #0750b1 inset, 0 0 10px 4px #3a46f0;
+    transition: 1s;
+}
+
+.login-f {
+    display: grid;
+}
+
+.input-user {
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    width: 333px;
+    padding: 4px;
+    border-bottom: 2px solid yellowgreen;
+    color: white;
+    margin-bottom: 20px;
+    outline: none
+}
