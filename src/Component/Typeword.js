@@ -1,7 +1,11 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import './Css/typeword.css';
+import contentContext from '../context/content/contentContext';
 
-export default function typeword() {
+
+export default function Typeword() {
+   const  nodea = useContext(contentContext);
+
 
     document.onkeypress = (e) => {
 
@@ -13,7 +17,7 @@ export default function typeword() {
         let timenow = parseInt(time.innerText);
 
         if (wordSec.firstElementChild.firstElementChild === activeElement && timenow === 60) {
-            
+
             timeStartNow();
         }
 
@@ -150,14 +154,14 @@ export default function typeword() {
 
     }
 
-    const speedNow = (time,word) => {
+    const speedNow = (time, word) => {
         console.log(time, word, 'in the speednow');
 
         let speed = document.getElementById('speed');
         let mines = 60 - time;
-        let minitetime = mines/60;
-        let wordre = word/5 
-        let result= wordre / minitetime;
+        let minitetime = mines / 60;
+        let wordre = word / 5
+        let result = wordre / minitetime;
         let showresult = parseInt(result)
         console.log(result);
         console.log(showresult);
@@ -172,17 +176,77 @@ export default function typeword() {
 
         let notstart = setInterval(() => {
             if (time.innerText === '0') {
-               
+
                 time.innerText = '00'
                 clearInterval(notstart);
             } else {
                 time.innerText = time.innerText - 1;
                 let wordnow = document.getElementById('wordCount')
                 let nowwordinhere = wordnow.innerText;
-                speedNow(time.innerText,nowwordinhere);
+                speedNow(time.innerText, nowwordinhere);
             }
         }, 1000);
     }
+
+    const setWordNow = () => {
+
+        function getRandom(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+        let rand = getRandom(0,4)
+        let randvalue = parseInt(rand)
+        let mySentence= nodea[randvalue].sentence;
+
+        let my = mySentence;
+        let wordsec = document.getElementById('wordSec');
+        wordsec.innerHTML = ' ';
+
+        for (let i = 0; i < my.split(' ').length; i++) {
+        
+            if (my.split(' ')[i] === my.split(' ')[0]) {
+
+                let nowword = my.split(' ')[0];
+                wordsec.innerHTML += ' <span class="word" id="active" > </span>'
+
+                for (let i = 0; i < nowword.length; i++) {
+                    let active = document.getElementById('active');
+
+                    if (nowword[0] === nowword[0] && !active.firstElementChild) {
+
+                        active.innerHTML += '<litter id="now" >'+nowword[i]+'</litter>';
+                    } else {
+
+                        active.innerHTML += '<litter >'+nowword[i]+'</litter>';
+                    }
+
+                }
+
+            } else {
+
+                wordsec.innerHTML += ' <span class="word" id="nextone"> </span>';
+                let nextone = document.getElementById('nextone');
+                let nowword = my.split(' ')[i];
+
+                for (let i = 0; i < nowword.length; i++) {
+
+                    if (nowword.length === nextone.childElementCount + 1) {
+                        nextone.innerHTML += '<litter >'+nowword[i]+'</litter>';
+                        nextone.removeAttribute('id');
+                    } else {
+                        nextone.innerHTML += '<litter >'+nowword[i]+'</litter>';
+                    }
+
+                }
+
+            }
+        }
+
+    }
+
+    setTimeout(() => {
+        let reload = document.getElementById('reloadthedog');
+        reload.click();
+    }, 200);
 
     return (
         <>
@@ -200,230 +264,14 @@ export default function typeword() {
                     <div className="d-flex">
                         <div>  All words:-  </div>  <p id="allWord"> 00 </p>
                     </div>
+                    <button onClick={setWordNow} id='reloadthedog' className="btn third">reload the document</button>
+                    
                 </div>
                 <div className="userinputinfo" data-aos="fade-in" data-aos-duration="2000">
-
                     <div className="wordFrist">
-
                         <div id="wordSec" className="wordSec">
-                            <span className="word" id="active">
-                                <litter id="now">t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-                            <span className="word">
-                                <litter>t</litter>
-                                <litter>h</litter>
-                                <litter>e</litter>
-                            </span>
-
+                            
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -431,6 +279,5 @@ export default function typeword() {
         </>
 
     )
-
 
 }

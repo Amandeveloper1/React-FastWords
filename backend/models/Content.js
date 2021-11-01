@@ -2,18 +2,13 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
-    name: {
-        type: String,
+    sno: {
+        type: Number,
         require: true
     },
-    email: {
+    content: {
         type: String,
         require: true,
-        unique: true
-    },
-    password: {
-        type: String,
-        require: true
     },
     date: {
         type: Date,
@@ -21,5 +16,5 @@ const UserSchema = new Schema({
     }
 });
 
-const Users = mongoose.model('user', UserSchema);
-module.exports = Users;
+const Word = mongoose.model('Contents', UserSchema);
+module.exports = Word;

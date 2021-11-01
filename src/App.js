@@ -15,6 +15,7 @@ import { useState } from 'react';
 import Signup from './Component/Signup';
 import Alert from './Component/Alert';
 import Account from './Component/Account';
+import ContentState from './context/content/contentState';
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -25,50 +26,52 @@ function App() {
   }
 
   return (<>
+  <ContentState>
     <Router>
-    <LoadingBar color='yellowgreen' progress={progress} height={3}  onLoaderFinished={() => setProgress(0)}  />
-      
-       <Alert alert={alert} showAlert={showAlert} />
-      
+      <LoadingBar color='yellowgreen' progress={progress} height={3} onLoaderFinished={() => setProgress(0)} />
+
+      <Alert alert={alert} showAlert={showAlert} />
+
       <Switch>
 
         <Route exact path="/">
-        <Navbar progress={setProgress} />
+          <Navbar progress={setProgress} />
           <Home progress={setProgress} showAlert={showAlert} />
           <Footer />
         </Route>
 
         <Route exact path="/about">
-        <Navbar progress={setProgress} />
+          <Navbar progress={setProgress} />
           <About />
           <Footer />
         </Route>
 
         <Route exact path="/competition">
-        <Navbar progress={setProgress} />
+          <Navbar progress={setProgress} />
           <Competition />
           <Footer />
         </Route>
 
         <Route exact path="/typeword">
-        <Navbar progress={setProgress} />
+          <Navbar progress={setProgress} />
           <Typeword />
         </Route>
 
         <Route exact path="/signup" >
-        <Navbar progress={setProgress} />
-          <Signup showAlert={showAlert}/>
+          <Navbar progress={setProgress} />
+          <Signup showAlert={showAlert} />
         </Route>
 
         <Route exact path="/account" >
-        <Navbar progress={setProgress} />
-          <Account/>
+          <Navbar progress={setProgress} />
+          <Account />
         </Route>
-       
+
 
       </Switch>
-     
+
     </Router>
+    </ContentState>
 
   </>
   );
