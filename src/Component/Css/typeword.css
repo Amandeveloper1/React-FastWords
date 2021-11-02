@@ -15,7 +15,9 @@
 }
 
 .userinputinfo {
-    border: 1px solid white;
+    margin-bottom: 10px;
+    height: 195px;
+    border: 1px solid rgb(192, 167, 167);
     margin-top: 50px;
     padding: 10px;
     border-radius: 5px;
