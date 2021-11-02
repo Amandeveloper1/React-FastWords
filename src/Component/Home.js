@@ -36,7 +36,6 @@ export default function Home(props) {
             setCredential({ email: '', password: '' })
             alert('Your are Login successfully');
             history.push('/account');
-            // history.push('/');
         }
     }
     const onLoginFailure = (res) => {
