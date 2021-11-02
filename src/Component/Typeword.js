@@ -211,7 +211,8 @@ export default function Typeword() {
                 for (let i = 0; i < nowword.length; i++) {
                     let active = document.getElementById('active');
 
-                    if (nowword[0] === nowword[0] && !active.firstElementChild) {
+                    // if (nowword[0] === nowword[0] && !active.firstElementChild) { Rember this is the meybe error
+                    if (nowword[0]  && !active.firstElementChild) {
 
                         active.innerHTML += '<litter id="now" >'+nowword[i]+'</litter>';
                     } else {
