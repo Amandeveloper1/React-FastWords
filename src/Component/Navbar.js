@@ -28,10 +28,10 @@ export default function Navbar(props) {
                             <Link onClick={() => setnowporgress()} className="a-link-page" to="/">Home</Link>
                         </li>
                         <li className="link-page">
-                            <Link onClick={() => setnowporgress()} className="a-link-page" to="/about">About</Link>
+                            <Link onClick={() => setnowporgress()} className="a-link-page" to="/competition">Competition</Link>
                         </li>
                         <li className="link-page">
-                            <Link onClick={() => setnowporgress()} className="a-link-page" to="/competition">Competition</Link>
+                            <Link onClick={() => setnowporgress()} className="a-link-page" to="/about">About</Link>
                         </li>
                     </ul>
                 </div>

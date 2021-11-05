@@ -72,7 +72,7 @@ export default function Home(props) {
                 <div className="content-site" data-aos="fade-right" data-aos-duration="2000">
                     <h2 className="rainbow-text">Hi User,</h2>
                     <div className="c-text-s">That the website help speed up your typing speed. </div>
-                    <p className="para-content">That the best opportunity to speed up your speed and participate in competition more information for so go in competition section.</p>
+                    <p className="para-content">That the best opportunity to speed up your speed and participate in competition more information for so go in About and Competition section.</p>
                     <div className="c-button-s">
                         <Link to="/typeword" className="typewordsend" onClick={() => setnowporgress()}>
                             <button className="glow-on-hover" type="button">

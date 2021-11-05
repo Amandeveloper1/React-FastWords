@@ -2,11 +2,7 @@ import Navbar from './Component/Navbar';
 import Home from './Component/Home';
 import Footer from './Component/Footer';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import About from './Component/About';
 import Competition from './Component/Competition';
 import Typeword from './Component/Typeword';
@@ -65,7 +61,9 @@ function App() {
         <Route exact path="/account" >
           <Navbar progress={setProgress} />
           <Account />
+          <Footer />
         </Route>
+
 
 
       </Switch>

@@ -1,13 +1,40 @@
 import React from 'react'
+import './Css/about.css';
 
 export default function About() {
     return (
         <>
-            <div className="container">
+            <div className="container text-white my-4">
+                <div>
+                    <h1>Welcome to FastWrods.com</h1>
+                    <div className="mt-4 alag-f">
+                        <div >
+                            This website help to speed up you typeing speed and we are help all kind to related typeing.
+                        </div>
+                        <div>
+                            FastWrods are provide free typeing practices for life time and competition  have to you participate in. FastWords are real trusted website.
+                        </div>
+                    </div>
+                </div>
 
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eveniet quam blanditiis ex aliquid impedit asperiores modi laudantium. In, eos vero? Illum fugiat beatae ex necessitatibus fugit minus hic facere nemo quam, nesciunt quis libero tenetur corporis odio, non enim magnam expedita at adipisci exercitationem reiciendis quaerat possimus inventore doloribus. Neque amet omnis placeat possimus architecto similique vitae commodi saepe at nobis deleniti atque voluptas minus natus minima reiciendis ducimus iste inventore eligendi, eum quos culpa odio velit. Dignissimos itaque aspernatur minima veniam omnis exercitationem vitae, tempora reiciendis corrupti voluptas et sunt fugit quo eligendi sequi laborum, similique doloremque quia provident asperiores quos. Obcaecati dolorem nulla provident rerum unde accusantium veniam deleniti nobis, sunt tempora doloremque, maxime quos hic eos minima, cupiditate repellendus ipsum aliquam consequuntur! Quisquam culpa quod dolores doloribus vitae ducimus sequi est ex amet atque nostrum, dignissimos error libero blanditiis numquam veritatis voluptatem dolore odio magnam qui maxime eligendi ullam! Eligendi obcaecati aliquam provident deleniti repellat pariatur architecto cumque minima sequi. Quae aut sequi unde iure vel consequatur officiis quidem aliquid reiciendis vitae, numquam qui error, voluptatum accusantium ea ipsa tempore. Aperiam vero doloremque suscipit aut excepturi velit nesciunt molestiae nisi, sit amet eaque libero nulla laudantium itaque voluptate. Magni vitae quasi itaque earum vero dicta nemo fugit, dolore laudantium minima ad perferendis et in adipisci animi eos, enim totam minus tempora! Voluptas, dolorem ut dicta ab, ullam hic ipsam id delectus maiores sint esse modi atque culpa tempore quos adipisci? Aspernatur vel ut eligendi dicta iure a omnis laboriosam similique animi placeat ad sunt magni perspiciatis temporibus illo quae reiciendis quam, explicabo officiis exercitationem quasi illum cumque quisquam! Rerum amet odit repellendus obcaecati repellat voluptatum at sapiente molestiae officiis laboriosam quas nihil iste, corporis similique nostrum nobis. Eaque nemo libero mollitia explicabo, exercitationem saepe praesentium corporis!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eveniet quam blanditiis ex aliquid impedit asperiores modi laudantium. In, eos vero? Illum fugiat beatae ex necessitatibus fugit minus hic facere nemo quam, nesciunt quis libero tenetur corporis odio, non enim magnam expedita at adipisci exercitationem reiciendis quaerat possimus inventore doloribus. Neque amet omnis placeat possimus architecto similique vitae commodi saepe at nobis deleniti atque voluptas minus natus minima reiciendis ducimus iste inventore eligendi, eum quos culpa odio velit. Dignissimos itaque aspernatur minima veniam omnis exercitationem vitae, tempora reiciendis corrupti voluptas et sunt fugit quo eligendi sequi laborum, similique doloremque quia provident asperiores quos. Obcaecati dolorem nulla provident rerum unde accusantium veniam deleniti nobis, sunt tempora doloremque, maxime quos hic eos minima, cupiditate repellendus ipsum aliquam consequuntur! Quisquam culpa quod dolores doloribus vitae ducimus sequi est ex amet atque nostrum, dignissimos error libero blanditiis numquam veritatis voluptatem dolore odio magnam qui maxime eligendi ullam! Eligendi obcaecati aliquam provident deleniti repellat pariatur architecto cumque minima sequi. Quae aut sequi unde iure vel consequatur officiis quidem aliquid reiciendis vitae, numquam qui error, voluptatum accusantium ea ipsa tempore. Aperiam vero doloremque suscipit aut excepturi velit nesciunt molestiae nisi, sit amet eaque libero nulla laudantium itaque voluptate. Magni vitae quasi itaque earum vero dicta nemo fugit, dolore laudantium minima ad perferendis et in adipisci animi eos, enim totam minus tempora! Voluptas, dolorem ut dicta ab, ullam hic ipsam id delectus maiores sint esse modi atque culpa tempore quos adipisci? Aspernatur vel ut eligendi dicta iure a omnis laboriosam similique animi placeat ad sunt magni perspiciatis temporibus illo quae reiciendis quam, explicabo officiis exercitationem quasi illum cumque quisquam! Rerum amet odit repellendus obcaecati repellat voluptatum at sapiente molestiae officiis laboriosam quas nihil iste, corporis similique nostrum nobis. Eaque nemo libero mollitia explicabo, exercitationem saepe praesentium corporis!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eveniet quam blanditiis ex aliquid impedit asperiores modi laudantium. In, eos vero? Illum fugiat beatae ex necessitatibus fugit minus hic facere nemo quam, nesciunt quis libero tenetur corporis odio, non enim magnam expedita at adipisci exercitationem reiciendis quaerat possimus inventore doloribus. Neque amet omnis placeat possimus architecto similique vitae commodi saepe at nobis deleniti atque voluptas minus natus minima reiciendis ducimus iste inventore eligendi, eum quos culpa odio velit. Dignissimos itaque aspernatur minima veniam omnis exercitationem vitae, tempora reiciendis corrupti voluptas et sunt fugit quo eligendi sequi laborum, similique doloremque quia provident asperiores quos. Obcaecati dolorem nulla provident rerum unde accusantium veniam deleniti nobis, sunt tempora doloremque, maxime quos hic eos minima, cupiditate repellendus ipsum aliquam consequuntur! Quisquam culpa quod dolores doloribus vitae ducimus sequi est ex amet atque nostrum, dignissimos error libero blanditiis numquam veritatis voluptatem dolore odio magnam qui maxime eligendi ullam! Eligendi obcaecati aliquam provident deleniti repellat pariatur architecto cumque minima sequi. Quae aut sequi unde iure vel consequatur officiis quidem aliquid reiciendis vitae, numquam qui error, voluptatum accusantium ea ipsa tempore. Aperiam vero doloremque suscipit aut excepturi velit nesciunt molestiae nisi, sit amet eaque libero nulla laudantium itaque voluptate. Magni vitae quasi itaque earum vero dicta nemo fugit, dolore laudantium minima ad perferendis et in adipisci animi eos, enim totam minus tempora! Voluptas, dolorem ut dicta ab, ullam hic ipsam id delectus maiores sint esse modi atque culpa tempore quos adipisci? Aspernatur vel ut eligendi dicta iure a omnis laboriosam similique animi placeat ad sunt magni perspiciatis temporibus illo quae reiciendis quam, explicabo officiis exercitationem quasi illum cumque quisquam! Rerum amet odit repellendus obcaecati repellat voluptatum at sapiente molestiae officiis laboriosam quas nihil iste, corporis similique nostrum nobis. Eaque nemo libero mollitia explicabo, exercitationem saepe praesentium corporis!</p>
+                <div>
+                    <h1>How to participate and win the competition</h1>
+                    <div className="mt-4 alag-f">
+                        <div >
+                            You have create you account and login us. you can participate in the tornament have to  setup your profile.
+                        </div>
+                        <div>
+                          Then have practices of typeing and in the given typeing section. that typeing test are given in the competition then you have to practice and score the best speed and you are able to win the competition.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container founder-s">
+                <div className='f-i'>
+                    <h1 className="f-n">Fonder</h1>
+                    <div className="p-f">:</div>
+                    <div className="f-r-n">Aman D. Gupta </div>
+                </div>
             </div>
         </>
     )

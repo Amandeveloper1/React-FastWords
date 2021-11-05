@@ -1,14 +1,14 @@
-import React,{useContext} from 'react'
+import React, { useContext } from 'react'
 import './Css/typeword.css';
+import img1 from './photos/headicon.png';
 import contentContext from '../context/content/contentContext';
 
 
 export default function Typeword() {
-   const  nodea = useContext(contentContext);
-
+    const nodea = useContext(contentContext);
 
     document.onkeypress = (e) => {
-
+        getPoint();
         let Active = document.getElementById('active');
         let activeElement = document.getElementById('now');
         let startNow = activeElement.innerText;
@@ -17,7 +17,6 @@ export default function Typeword() {
         let timenow = parseInt(time.innerText);
 
         if (wordSec.firstElementChild.firstElementChild === activeElement && timenow === 60) {
-
             timeStartNow();
         }
 
@@ -138,6 +137,7 @@ export default function Typeword() {
         wordCount.innerText = currentWords + 1;
 
     }
+
     const allWords = () => {
 
         let allWord = document.getElementById('allWord');
@@ -154,55 +154,35 @@ export default function Typeword() {
 
     }
 
-    const speedNow = (time, word) => {
-        console.log(time, word, 'in the speednow');
-
-        let speed = document.getElementById('speed');
-        let mines = 60 - time;
-        let minitetime = mines / 60;
-        let wordre = word / 5
-        let result = wordre / minitetime;
-        let showresult = parseInt(result)
-        console.log(result);
-        console.log(showresult);
-        speed.innerText = showresult;
-
-    }
-
-    function timeStartNow() {
-        let time = document.getElementById('time');
-        let nowTime = 60;
-        time.innerText = nowTime;
-
-        let notstart = setInterval(() => {
-            if (time.innerText === '0') {
-
-                time.innerText = '00'
-                clearInterval(notstart);
-            } else {
-                time.innerText = time.innerText - 1;
-                let wordnow = document.getElementById('wordCount')
-                let nowwordinhere = wordnow.innerText;
-                speedNow(time.innerText, nowwordinhere);
-            }
-        }, 1000);
-    }
-
     const setWordNow = () => {
+        let wordsec = document.getElementById('wordSec');
+        let speed = document.getElementById('speed');
+        let time = document.getElementById('time');
+        let wordCount = document.getElementById('wordCount');
+        let allWord = document.getElementById('allWord');
+
+        speed.innerText = '00';
+        time.innerText = '60';
+        wordCount.innerText = '00';
+        allWord.innerText = '00';
+
+        wordsec.removeAttribute('class')
+        wordsec.setAttribute('class', 'wordSec')
+
+
+
 
         function getRandom(min, max) {
             return Math.random() * (max - min) + min;
         }
-        let rand = getRandom(0,4)
+        let rand = getRandom(0, 4)
         let randvalue = parseInt(rand)
-        let mySentence= nodea[randvalue].sentence;
-
+        let mySentence = nodea[randvalue].sentence;
         let my = mySentence;
-        let wordsec = document.getElementById('wordSec');
         wordsec.innerHTML = ' ';
 
         for (let i = 0; i < my.split(' ').length; i++) {
-        
+
             if (my.split(' ')[i] === my.split(' ')[0]) {
 
                 let nowword = my.split(' ')[0];
@@ -212,12 +192,12 @@ export default function Typeword() {
                     let active = document.getElementById('active');
 
                     // if (nowword[0] === nowword[0] && !active.firstElementChild) { Rember this is the meybe error
-                    if (nowword[0]  && !active.firstElementChild) {
+                    if (nowword[0] && !active.firstElementChild) {
 
-                        active.innerHTML += '<litter id="now" >'+nowword[i]+'</litter>';
+                        active.innerHTML += '<litter id="now" >' + nowword[i] + '</litter>';
                     } else {
 
-                        active.innerHTML += '<litter >'+nowword[i]+'</litter>';
+                        active.innerHTML += '<litter >' + nowword[i] + '</litter>';
                     }
 
                 }
@@ -231,10 +211,10 @@ export default function Typeword() {
                 for (let i = 0; i < nowword.length; i++) {
 
                     if (nowword.length === nextone.childElementCount + 1) {
-                        nextone.innerHTML += '<litter >'+nowword[i]+'</litter>';
+                        nextone.innerHTML += '<litter >' + nowword[i] + '</litter>';
                         nextone.removeAttribute('id');
                     } else {
-                        nextone.innerHTML += '<litter >'+nowword[i]+'</litter>';
+                        nextone.innerHTML += '<litter >' + nowword[i] + '</litter>';
                     }
 
                 }
@@ -244,37 +224,235 @@ export default function Typeword() {
 
     }
 
+    const loadingfirst = () => {
+
+        let wordsec = document.getElementById('wordSec');
+        wordsec.innerHTML = ` <div style=" text-align: center;  margin-top: 30px;"> <img src="/static/media/loader.cfc783bb.gif" style=" width: 80px; " /> </div>`;
+        setTimeout(() => {
+            setWordNow();
+        }, 300);
+    }
+
+    function getPoint() {
+
+        var target = document.getElementById("active");
+        console.log(target.offsetTop);
+
+        if (target.offsetTop > 470) {
+
+            console.log('that is a time to change height.');
+            let wordSec = document.getElementById('wordSec');
+
+
+            if (wordSec.classList.contains('fristheight')) {
+                wordSec.classList.remove('fristheight')
+                wordSec.classList.add('secondheight');
+
+            } else if (wordSec.classList.contains('secondheight')) {
+                wordSec.classList.remove('secondheight')
+                wordSec.classList.add('thridheight');
+
+            } else if (wordSec.classList.contains('thridheight')) {
+
+                wordSec.classList.remove('thridheight')
+                wordSec.classList.add('forthheight');
+
+            } else if (wordSec.classList.contains('forthheight')) {
+
+                wordSec.classList.remove('forthheight')
+                wordSec.classList.add('fivethheight');
+
+            } else if (wordSec.classList.contains('fivethheight')) {
+
+                wordSec.classList.remove('fivethheight')
+                wordSec.classList.add('sixthheight');
+
+            } else if (wordSec.classList.contains('sixthheight')) {
+
+                wordSec.classList.remove('sixthheight')
+                wordSec.classList.add('seventheight');
+
+            } else if (wordSec.classList.contains('seventheight')) {
+
+                wordSec.classList.remove('seventheight')
+                wordSec.classList.add('eightheight');
+
+            } else if (wordSec.classList.contains('eightheight')) {
+
+                console.log('that is last one.');
+
+            } else {
+                wordSec.classList.add('fristheight');
+            }
+        }
+    }
+
+    const timeStartNow = () => {
+
+        let startnow = document.getElementById('allWord');
+
+        if (startnow.innerText === '00') {
+
+            let timed = document.getElementById('time');
+            let nowinterval = setInterval(() => {
+
+
+                if (timed.innerText === '0') {
+                    clearInterval(nowinterval)
+                    let practiceUser = document.getElementById('p-u');
+                    let resultUser = document.getElementById('r-u');
+                    practiceUser.classList.add('d-none');
+                    resultUser.removeAttribute('class');
+
+
+
+                    let wpm = document.getElementById('wpm')
+                    let cWrod = document.getElementById('cWrod')
+                    let uTime = document.getElementById('uTime')
+                    let aWordd = document.getElementById('aWordd')
+
+                    let speed = document.getElementById('speed')
+                    let wordCount = document.getElementById('wordCount')
+                    let allWord = document.getElementById('allWord')
+
+                    wpm.innerText = speed.innerText;
+                    cWrod.innerText = wordCount.innerText;
+                    uTime.innerText = 60;
+                    aWordd.innerText = allWord.innerText;
+
+                } else {
+
+                    timed.innerText = timed.innerText - 1;
+
+                    let wordnow = document.getElementById('wordCount')
+                    let word = wordnow.innerText;
+                    let time = timed.innerText;
+
+                    let speed = document.getElementById('speed');
+                    let mines = 60 - time;
+                    let minitetime = mines / 60;
+                    let wordre = word / 5
+                    let result = wordre / minitetime;
+                    let showresult = parseInt(result)
+                    speed.innerText = showresult;
+
+                }
+
+            }, 1000);
+        }
+
+    }
+
     setTimeout(() => {
-        let reload = document.getElementById('reloadthedog');
-        reload.click();
-    }, 200);
+        let now = document.getElementById('wordSec').innerHTML;
+        if (now === '') {
+            let havetoclick = document.getElementById('havetoclick');
+            havetoclick.click();
+        }
+    }, 100);
+
+    const restartUserInterface = () => {
+        let practiceUser = document.getElementById('p-u');
+        let resultUser = document.getElementById('r-u');
+
+        practiceUser.classList.remove('d-none');
+        resultUser.classList.add('d-none');
+        loadingfirst();
+    }
 
     return (
         <>
-            <div className="container">
+            <div className="container" id="p-u">
                 <div className="userinfo" data-aos="fade-right" data-aos-duration="1000">
-                    <div className="d-flex">
-                        <div>   Time:-   </div> <p id="time"> 60 </p>
+                    <div className="userdata timewid"  >
+                        <div>   Time:-   </div> <p id="time" className="ps-2"> 60 </p>
                     </div>
-                    <div className="d-flex">
-                        <div>  Speed:-  </div>  <p id="speed"> 00 </p>
+                    <div className="userdata speedwid">
+                        <div>  Speed:-  </div>  <p id="speed" className="ps-2"> 00 </p>
                     </div>
-                    <div className="d-flex">
-                        <div> Currect Words:-  </div>  <p id="wordCount"> 00 </p>
+                    <div className="userdata Wcwid" >
+                        <div> Currect Words:-  </div>  <p id="wordCount" className="ps-2"> 00 </p>
                     </div>
-                    <div className="d-flex">
-                        <div>  All words:-  </div>  <p id="allWord"> 00 </p>
+                    <div className="userdata Awwid" >
+                        <div>  All words:-  </div>  <p id="allWord" className="ps-2" > 00 </p>
                     </div>
-                    <button onClick={setWordNow} id='reloadthedog' className="btn third">reload the document</button>
-                    
                 </div>
                 <div className="userinputinfo" data-aos="fade-in" data-aos-duration="2000">
                     <div className="wordFrist">
-                        <div id="wordSec" className="wordSec">
-                            
-                        </div>
+                        <div id="wordSec" className="wordSec"></div>
                     </div>
                 </div>
+                <div className="text-center my-4" onClick={loadingfirst} id="havetoclick" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" className="bi bi-arrow-clockwise reloadone" viewBox="0 0 16 16">
+                        <path fillRule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                    </svg>
+                </div>
+            </div>
+
+
+            <div className='d-none' id="r-u">
+                <div className="container rou ">
+                    <div className="a-c-r">
+                        <div className="head-tr">
+                            <div className="score-hear-f">
+                                <img className="score-icon-head" src={img1} alt="" />
+                                <h1>FastWords</h1>
+                            </div>
+                        </div>
+
+                        <div className="score-f mt-5">
+                            <div className="score-h-f">
+                                WPM
+                            </div>
+                            <div className="score-a-f" id='wpm'>
+                                100
+                            </div>
+                        </div>
+                        <div className="score-f mt-5">
+                            <div className="score-h-f">
+                                Accurance
+                            </div>
+                            <div className="score-a-f" id='accurance'>
+                                100
+                            </div>
+                        </div>
+                        <div className="score-f mt-5">
+                            <div className="score-h-f">
+                                Currect Words
+                            </div>
+                            <div className="score-a-f" id='cWrod'>
+                                100
+                            </div>
+                        </div>
+                        <div className="score-f mt-5">
+                            <div className="score-h-f">
+                                Time
+                            </div>
+                            <div className="score-a-f" id="uTime">
+                                100
+                            </div>
+                        </div>
+                        <div className="score-f mt-5">
+                            <div className="score-h-f">
+                                All Words
+                            </div>
+                            <div className="score-a-f" id="aWordd">
+                                100
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div className="container rou">
+                    <div>
+                        <button onClick={restartUserInterface}>Restart</button>
+                        <button>Shear</button>
+                    </div>
+                </div>
+
             </div>
 
         </>

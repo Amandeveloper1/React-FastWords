@@ -1,11 +1,13 @@
 .userinfo {
     border: 1px solid white;
     padding: 10px;
-    width: 300px;
+    display: flex;
+    padding: 20px;
     margin-top: 20px;
     color: white;
     border-radius: 5px;
     cursor: default;
+    justify-content: center;
 }
 
 .userinfo:hover {
@@ -32,6 +34,7 @@
 
 .wordFrist {
     overflow-wrap: anywhere;
+    user-select: none;
 }
 
 .word {
@@ -53,4 +56,135 @@
 
 .incorrect {
     color: red;
+}
+
+.reloadone {
+    cursor: pointer;
+    color: yellowgreen;
+}
+
+.reloadone:hover {
+    color: yellow;
+}
+
+.userdata {
+    padding: 10px;
+    font-size: 40px;
+    margin-top: 18px;
+    display: flex;
+}
+
+.fristheight {
+    margin-top: -96px;
+}
+
+.secondheight {
+    margin-top: -185px;
+}
+
+.thridheight {
+    margin-top: -276px;
+}
+
+.forthheight {
+    margin-top: -364px;
+}
+
+.fivethheight {
+    margin-top: -460px;
+}
+
+.sixthheight {
+    margin-top: -556px;
+}
+
+.seventheight {
+    margin-top: -552px;
+}
+
+.eightheight {
+    margin-top: -648px;
+}
+
+.timewid {
+    width: 170px;
+}
+
+.speedwid {
+    width: 200px;
+}
+
+.Wcwid {
+    width: 345px;
+}
+
+.Awwid {
+    width: 266px;
+}
+
+.rou {
+    justify-content: center;
+    display: flex;
+}
+
+.a-c-r {
+    width: 400px;
+    border: 2px solid;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.head-tr {
+    color: white;
+    justify-content: center;
+    display: flex;
+}
+
+.head-tr:hover {
+    color: white;
+    box-shadow: 0 0 10px 0 #0750b1 inset, 0 0 10px 4px #3a46f0;
+    transition: 1s;
+}
+
+.score-f {
+    margin: 10px;
+    color: #58f56b;
+    font-size: 26px;
+    transition: 1s;
+    cursor: default;
+}
+
+.score-f:hover {
+    border: 2px solid blue;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 500ms
+}
+
+.score-h-f {
+    padding-left: 19px;
+}
+
+.score-a-f {
+    direction: rtl;
+    margin-top: -37px;
+    border-bottom: 1px solid;
+    padding-right: 24px;
+}
+
+.score-hear-f {
+    display: flex;
+    border-bottom: 2px solid;
+    cursor: pointer;
+    width: 300px;
+    text-align: center;
+    padding-left: 46px;
+}
+
+.score-icon-head {
+    width: 52px;
+    border-radius: 5px;
+    height: 47px;
 }

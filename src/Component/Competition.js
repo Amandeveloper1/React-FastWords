@@ -13,6 +13,8 @@ export default function Competition() {
                         In the future competition are avilable we are inform you.
                     </div>
                 </div>
+
+               
             </div>
         </>
 
