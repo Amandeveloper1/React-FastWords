@@ -85,3 +85,12 @@
 .text-d:hover {
     color: white;
 }
+
+.c {
+    cursor: default;
+}
+
+.dis {
+    pointer-events: none;
+    color: rgb(170, 165, 165);
+}

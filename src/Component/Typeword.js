@@ -1,10 +1,12 @@
 import React, { useContext } from 'react'
 import './Css/typeword.css';
 import img1 from './photos/headicon.png';
+import img2 from './photos/loader.gif';
 import contentContext from '../context/content/contentContext';
 
 
-export default function Typeword() {
+export default function Typeword(props) {
+
     const nodea = useContext(contentContext);
 
     document.onkeypress = (e) => {
@@ -18,6 +20,7 @@ export default function Typeword() {
 
         if (wordSec.firstElementChild.firstElementChild === activeElement && timenow === 60) {
             timeStartNow();
+            disabledAll();
         }
 
         if (e.key === startNow) {
@@ -227,10 +230,14 @@ export default function Typeword() {
     const loadingfirst = () => {
 
         let wordsec = document.getElementById('wordSec');
-        wordsec.innerHTML = ` <div style=" text-align: center;  margin-top: 30px;"> <img src="/static/media/loader.cfc783bb.gif" style=" width: 80px; " /> </div>`;
+        wordsec.innerHTML = ` <div style=" text-align: center;  margin-top: 30px;"> <img src="/static/media/loader.cfc783bb.gif" alt="This img not work" style=" width: 80px; "   /> </div>`;
+        props.setnav('start');
+        if (props.valueinv !== 'notset') {
+            clearInterval(props.valueinv);
+        }
         setTimeout(() => {
             setWordNow();
-        }, 300);
+        }, 200);  
     }
 
     function getPoint() {
@@ -238,9 +245,8 @@ export default function Typeword() {
         var target = document.getElementById("active");
         console.log(target.offsetTop);
 
-        if (target.offsetTop > 470) {
+        if (target.offsetTop > 410) {
 
-            console.log('that is a time to change height.');
             let wordSec = document.getElementById('wordSec');
 
 
@@ -308,19 +314,22 @@ export default function Typeword() {
 
                     let wpm = document.getElementById('wpm')
                     let cWrod = document.getElementById('cWrod')
-                    let uTime = document.getElementById('uTime')
                     let aWordd = document.getElementById('aWordd')
 
                     let speed = document.getElementById('speed')
                     let wordCount = document.getElementById('wordCount')
                     let allWord = document.getElementById('allWord')
-
+                    let accurancy = document.getElementById('accurancy')
+                    props.setnav('start');
                     wpm.innerText = speed.innerText;
                     cWrod.innerText = wordCount.innerText;
-                    uTime.innerText = 60;
                     aWordd.innerText = allWord.innerText;
+                    accurancy.innerText = parseInt(wordCount.innerText / allWord.innerText * 100) + '%';
 
                 } else {
+                    if (props.valueinv === 'notset') {
+                        props.setinv(nowinterval)
+                    }
 
                     timed.innerText = timed.innerText - 1;
 
@@ -352,12 +361,16 @@ export default function Typeword() {
     }, 100);
 
     const restartUserInterface = () => {
+        loadingfirst();
         let practiceUser = document.getElementById('p-u');
         let resultUser = document.getElementById('r-u');
-
+       
         practiceUser.classList.remove('d-none');
         resultUser.classList.add('d-none');
-        loadingfirst();
+    }
+
+    const disabledAll = ()=>{
+        props.setnav('stop');
     }
 
     return (
@@ -391,7 +404,7 @@ export default function Typeword() {
             </div>
 
 
-            <div className='d-none' id="r-u">
+            <div className='d-none' id="r-u" >
                 <div className="container rou ">
                     <div className="a-c-r">
                         <div className="head-tr">
@@ -409,33 +422,25 @@ export default function Typeword() {
                                 100
                             </div>
                         </div>
-                        <div className="score-f mt-5">
+                        <div className="score-f mt-3">
                             <div className="score-h-f">
                                 Accurance
                             </div>
-                            <div className="score-a-f" id='accurance'>
+                            <div className="score-a-f" id='accurancy'>
                                 100
                             </div>
                         </div>
-                        <div className="score-f mt-5">
+                        <div className="score-f mt-3">
                             <div className="score-h-f">
-                                Currect Words
+                                Currect litters
                             </div>
                             <div className="score-a-f" id='cWrod'>
                                 100
                             </div>
                         </div>
-                        <div className="score-f mt-5">
+                        <div className="score-f mt-3">
                             <div className="score-h-f">
-                                Time
-                            </div>
-                            <div className="score-a-f" id="uTime">
-                                100
-                            </div>
-                        </div>
-                        <div className="score-f mt-5">
-                            <div className="score-h-f">
-                                All Words
+                                All litter 
                             </div>
                             <div className="score-a-f" id="aWordd">
                                 100
@@ -448,8 +453,8 @@ export default function Typeword() {
 
                 <div className="container rou">
                     <div>
-                        <button onClick={restartUserInterface}>Restart</button>
-                        <button>Shear</button>
+                        <button onClick={restartUserInterface} className="btn third">Restart</button>
+                        <button className="btn third ms-2">Shear</button>
                     </div>
                 </div>
 

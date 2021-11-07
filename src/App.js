@@ -14,7 +14,10 @@ import Account from './Component/Account';
 import ContentState from './context/content/contentState';
 
 function App() {
+
   const [progress, setProgress] = useState(0);
+  const [navstop, setnavstop] = useState('notset');
+  const [stopinterval, setStopinterval] = useState('notset');
 
   const [alert, setAlert] = useState(null);
   const showAlert = (massage) => {
@@ -49,8 +52,8 @@ function App() {
         </Route>
 
         <Route exact path="/typeword">
-          <Navbar progress={setProgress} />
-          <Typeword />
+          <Navbar progress={setProgress} nav={navstop}/>
+          <Typeword setnav={setnavstop} setinv={setStopinterval} valueinv={stopinterval}/>
         </Route>
 
         <Route exact path="/signup" >
