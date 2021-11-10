@@ -12,14 +12,17 @@ export default function Account() {
         alert('Your are Logout successfully', 'success');
         history.push('/');
     }
+
     return (<>
-    
-        <div>
-            that is a acount.
-        </div>
-        <div>
+        <div className="container">
+
+            <div>
+                that is a acount.
+            </div>
             
-        <GoogleLogout clientId={clientId} buttonText="Logout" onLogoutSuccess={logoutNow} />
+            <div>
+                <GoogleLogout clientId={clientId} buttonText="Logout" onLogoutSuccess={logoutNow} />
+            </div>
         </div>
     </>
     )

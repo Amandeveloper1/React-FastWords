@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import './Css/typeword.css';
 import img1 from './photos/headicon.png';
-import img2 from './photos/loader.gif';
+import './photos/loader.gif';
 import contentContext from '../context/content/contentContext';
 
 
@@ -353,8 +353,10 @@ export default function Typeword(props) {
     }
 
     setTimeout(() => {
-        let now = document.getElementById('wordSec').innerHTML;
-        if (now === '') {
+        let now = document.getElementById('wordSec');
+        let nowinner = now.innerHTML.length;
+    
+        if (nowinner === 0 ) {
             let havetoclick = document.getElementById('havetoclick');
             havetoclick.click();
         }
@@ -384,10 +386,10 @@ export default function Typeword(props) {
                         <div>  Speed:-  </div>  <p id="speed" className="ps-2"> 00 </p>
                     </div>
                     <div className="userdata Wcwid" >
-                        <div> Currect Words:-  </div>  <p id="wordCount" className="ps-2"> 00 </p>
+                        <div> Currect Letters:-  </div>  <p id="wordCount" className="ps-2"> 00 </p>
                     </div>
                     <div className="userdata Awwid" >
-                        <div>  All words:-  </div>  <p id="allWord" className="ps-2" > 00 </p>
+                        <div>  All Letters:-  </div>  <p id="allWord" className="ps-2" > 00 </p>
                     </div>
                 </div>
                 <div className="userinputinfo" data-aos="fade-in" data-aos-duration="2000">
@@ -432,7 +434,7 @@ export default function Typeword(props) {
                         </div>
                         <div className="score-f mt-3">
                             <div className="score-h-f">
-                                Currect litters
+                                Currect Letters
                             </div>
                             <div className="score-a-f" id='cWrod'>
                                 100
@@ -440,7 +442,7 @@ export default function Typeword(props) {
                         </div>
                         <div className="score-f mt-3">
                             <div className="score-h-f">
-                                All litter 
+                                All Letters 
                             </div>
                             <div className="score-a-f" id="aWordd">
                                 100

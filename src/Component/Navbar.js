@@ -13,43 +13,72 @@ export default function Navbar(props) {
         }, 100);
     }
 
-    if (props.nav ==='stop') {
+    if (props.nav === 'stop') {
 
-        let disabledd = document.getElementById('disablednow');
-        let disabled1 = document.getElementById('disabled1');
-        let disabled2 = document.getElementById('disabled2');
-        let disabled3 = document.getElementById('disabled3');
-        let disabled4 = document.getElementById('disabled4');
-        let disabled5 = document.getElementById('disabled5');
-        let disabled6 = document.getElementById('disabled6');
+        if (!localStorage.getItem('token')) {
 
-        disabledd.classList.add('dis');
-        disabled1.classList.add('dis');
-        disabled2.classList.add('dis');
-        disabled3.classList.add('dis');
+            let disabledd = document.getElementById('disablednow');
+            let disabled1 = document.getElementById('disabled1');
+            let disabled2 = document.getElementById('disabled2');
+            let disabled3 = document.getElementById('disabled3');
+            let disabled4 = document.getElementById('disabled4');
+            let disabled5 = document.getElementById('disabled5');
 
-        disabled4.classList.add('dis');
-        disabled5.classList.add('dis');
+            disabledd.classList.add('dis');
+            disabled1.classList.add('dis');
+            disabled2.classList.add('dis');
+            disabled3.classList.add('dis');
 
+            disabled4.classList.add('dis');
+            disabled5.classList.add('dis');
+        } else {
+            let disabledd = document.getElementById('disablednow');
+            let disabled1 = document.getElementById('disabled1');
+            let disabled2 = document.getElementById('disabled2');
+            let disabled3 = document.getElementById('disabled3');
+            disabledd.classList.add('dis');
+            disabled1.classList.add('dis');
+            disabled2.classList.add('dis');
+            disabled3.classList.add('dis');
+
+            let disabled6 = document.getElementById('disabled6');
+            disabled6.classList.add('dis');
+        }
     }
-    if (props.nav ==='start') {
-        
+    if (props.nav === 'start') {
 
-        let disabledd = document.getElementById('disablednow');
-        let disabled1 = document.getElementById('disabled1');
-        let disabled2 = document.getElementById('disabled2');
-        let disabled3 = document.getElementById('disabled3');
-        let disabled4 = document.getElementById('disabled4');
-        let disabled5 = document.getElementById('disabled5');
-        let disabled6 = document.getElementById('disabled6');
+        if (!localStorage.getItem('token')) {
 
-        disabledd.classList.remove('dis');
-        disabled1.classList.remove('dis');
-        disabled2.classList.remove('dis');
-        disabled3.classList.remove('dis');
+            let disabledd = document.getElementById('disablednow');
+            let disabled1 = document.getElementById('disabled1');
+            let disabled2 = document.getElementById('disabled2');
+            let disabled3 = document.getElementById('disabled3');
+            let disabled4 = document.getElementById('disabled4');
+            let disabled5 = document.getElementById('disabled5');
+          
 
-        disabled4.classList.remove('dis');
-        disabled5.classList.remove('dis');
+            disabledd.classList.remove('dis');
+            disabled1.classList.remove('dis');
+            disabled2.classList.remove('dis');
+            disabled3.classList.remove('dis');
+
+            disabled4.classList.remove('dis');
+            disabled5.classList.remove('dis');
+        }else{
+
+            let disabledd = document.getElementById('disablednow');
+            let disabled1 = document.getElementById('disabled1');
+            let disabled2 = document.getElementById('disabled2');
+            let disabled3 = document.getElementById('disabled3');
+            
+            disabledd.classList.remove('dis');
+            disabled1.classList.remove('dis');
+            disabled2.classList.remove('dis');
+            disabled3.classList.remove('dis');
+
+            let disabled6 = document.getElementById('disabled6');
+            disabled6.classList.remove('dis');
+        }
     }
 
     return (
@@ -64,13 +93,13 @@ export default function Navbar(props) {
                 <div className="m-head">
                     <ul className="d-flex">
                         <li className="link-page">
-                            <Link onClick={() => setnowporgress()} className="a-link-page"  id="disabled1" to="/">Home</Link>
+                            <Link onClick={() => setnowporgress()} className="a-link-page" id="disabled1" to="/">Home</Link>
                         </li>
                         <li className="link-page">
-                            <Link onClick={() => setnowporgress()} className="a-link-page"  id="disabled2" to="/competition">Competition</Link>
+                            <Link onClick={() => setnowporgress()} className="a-link-page" id="disabled2" to="/competition">Competition</Link>
                         </li>
                         <li className="link-page">
-                            <Link onClick={() => setnowporgress()} className="a-link-page"  id="disabled3" to="/about">About</Link>
+                            <Link onClick={() => setnowporgress()} className="a-link-page" id="disabled3" to="/about">About</Link>
                         </li>
                     </ul>
                 </div>
