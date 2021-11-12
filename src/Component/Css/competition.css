@@ -5,11 +5,46 @@
     padding: 10px;
     border-radius: 5px;
     color: white;
-    cursor: default;
+    cursor: pointer;
 }
 
 .firstone:hover {
     color: white;
     box-shadow: 0 0 10px 0 #0750b1 inset, 0 0 10px 4px #3a46f0;
     transition: 1s;
+}
+
+.typimg {
+    width: 250px;
+}
+
+.com-rules {
+    text-align: left;
+    padding: 10px;
+}
+
+.disflesc {
+    display: flex;
+}
+
+.fn-c {
+    font-family: 'Inter', sans-serif;
+}
+
+.block {
+    display: none;
+}
+
+.details {
+    color: white;
+}
+
+@media (max-width: 990px) {
+    .typimg {
+        height: 238px;
+        width: 80%;
+    }
+    .disflesc {
+        display: contents;
+    }
 }

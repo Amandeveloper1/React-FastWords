@@ -81,17 +81,36 @@ export default function Navbar(props) {
         }
     }
 
+    const navsetNow = () =>{
+        let head = document.getElementById('headerone')
+        let link = document.getElementById('linkone')
+        let login = document.getElementById('loginone')
+
+        if (link.classList.contains('overhid')) {
+            head.classList.remove('h-res');
+            head.classList.add('hight-nav');
+            link.classList.remove('overhid')
+            login.classList.remove('overhid')
+        }else{
+            head.classList.add('h-res');
+            link.classList.add('overhid')
+            login.classList.add('overhid')
+            head.classList.remove('hight-nav');
+        }
+
+    }
+
     return (
         <>
 
-            <div className="header container ">
+            <div className="header container h-res" id="headerone">
                 <div className="n-head" id="disablednow">
                     <img className="icon-head" src={img1} alt="" />
-                    <h1>FastWords</h1>
+                    <h1 className="head-name">FastWords</h1>
                 </div>
 
-                <div className="m-head">
-                    <ul className="d-flex">
+                <div className="m-head overhid" id="linkone">
+                    <ul className="dispflex">
                         <li className="link-page">
                             <Link onClick={() => setnowporgress()} className="a-link-page" id="disabled1" to="/">Home</Link>
                         </li>
@@ -104,13 +123,18 @@ export default function Navbar(props) {
                     </ul>
                 </div>
 
-                <div className="sl-head">
+                <div className="sl-head overhid" id='loginone'>
                     {!localStorage.getItem('token') ? <>
                         <Link onClick={() => setnowporgress()} className="text-d" id="disabled4" to="/signup">  <button className="btn third" >Signup</button></Link>
                         <Link onClick={() => setnowporgress()} className="text-d" id="disabled5" to="/"><button className="btn third me-1">Login</button></Link>
                     </> : <>
                         <Link onClick={() => setnowporgress()} className="text-d" id="disabled6" to="/account"><button className="btn third me-1">Account</button></Link>
                     </>}
+                </div>
+                <div className="burger" onClick={navsetNow}>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
                 </div>
             </div>
         </>

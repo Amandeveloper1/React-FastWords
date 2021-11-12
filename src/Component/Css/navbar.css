@@ -1,98 +1,247 @@
-.header {
-    color: white;
-    border-bottom: 1px solid white;
-    padding: 23px;
-}
-
-.n-head {
-    display: flex;
-    animation: headline 2s 1;
-    border-bottom: 2px solid;
-    width: 214px;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.n-head:hover {
-    color: white;
-    box-shadow: 0 0 10px 0 #0750b1 inset, 0 0 10px 4px #3a46f0;
-    transition: 1s;
-}
-
-@keyframes headline {
-    0% {
-        width: 0;
+    .header {
+        color: white;
+        border-bottom: 1px solid white;
+        padding: 23px;
     }
-    100% {
+    
+    .n-head {
+        display: flex;
+        animation: headline 2s 1;
+        border-bottom: 2px solid;
         width: 214px;
+        cursor: pointer;
+        transition: 1s;
     }
-}
-
-.icon-head {
-    width: 52px;
-    border-radius: 5px;
-    height: 47px;
-}
-
-.m-head {
-    margin-left: 297px;
-    margin-top: -35px;
-}
-
-.link-page {
-    list-style: none;
-    margin-right: 23px;
-}
-
-.a-link-page {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    transition: 1s;
-}
-
-.a-link-page:hover {
-    color: yellowgreen;
-    transition: 0s;
-}
-
-.sl-head {
-    direction: rtl;
-    margin-top: -50px;
-}
-
-.third {
-    border-color: #171e24;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 40px 40px #01080e inset, 0 0 0 0 #3498db;
-    -webkit-transition: all 150ms ease-in-out;
-    transition: all 150ms ease-in-out;
-    transition: 1s;
-}
-
-.third:hover {
-    color: white;
-    box-shadow: 0 0 10px 0 #0750b1 inset, 0 0 10px 4px #3a46f0;
-    transition: 1s;
-}
-
-.text-d {
-    text-decoration: none;
-    color: white;
-}
-
-.text-d:hover {
-    color: white;
-}
-
-.c {
-    cursor: default;
-}
-
-.dis {
-    pointer-events: none;
-    color: rgb(170, 165, 165);
-}
-
-@media only screen and (max-width: 1010) {}
+    
+    .n-head:hover {
+        color: white;
+        box-shadow: 0 0 10px 0 #0750b1 inset, 0 0 10px 4px #3a46f0;
+        transition: 1s;
+    }
+    
+    .dispflex {
+        display: flex;
+    }
+    
+    @keyframes headline {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 214px;
+        }
+    }
+    
+    .icon-head {
+        width: 52px;
+        border-radius: 5px;
+        height: 47px;
+    }
+    
+    .m-head {
+        margin-left: 297px;
+        margin-top: -35px;
+    }
+    
+    .link-page {
+        list-style: none;
+        margin-right: 23px;
+    }
+    
+    .a-link-page {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        transition: 1s;
+    }
+    
+    .a-link-page:hover {
+        color: yellowgreen;
+        transition: 0s;
+    }
+    
+    .sl-head {
+        direction: rtl;
+        margin-top: -50px;
+    }
+    
+    .third {
+        border-color: #171e24;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 40px 40px #01080e inset, 0 0 0 0 #3498db;
+        -webkit-transition: all 150ms ease-in-out;
+        transition: all 150ms ease-in-out;
+        transition: 1s;
+    }
+    
+    .third:hover {
+        color: white;
+        box-shadow: 0 0 10px 0 #0750b1 inset, 0 0 10px 4px #3a46f0;
+        transition: 1s;
+    }
+    
+    .text-d {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .text-d:hover {
+        color: white;
+    }
+    
+    .c {
+        cursor: default;
+    }
+    
+    .dis {
+        pointer-events: none;
+        color: rgb(170, 165, 165);
+    }
+    
+    .burger {
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 16%;
+    }
+    
+    .line {
+        width: 33px;
+        background-color: white;
+        height: 4px;
+        margin: 3px 3px;
+        border-radius: 5px;
+    }
+    
+    @media (max-width: 1030px) {
+        .dispflex {
+            display: contents;
+        }
+        .link-page {
+            border-bottom: 1px solid;
+            padding-left: 12px;
+            margin: 10px 0px;
+        }
+        .a-link-page {
+            font-size: 30px;
+        }
+        .m-head {
+            margin-top: 13px;
+            margin-left: 1px;
+        }
+        .sl-head {
+            direction: ltr;
+            margin-top: 18px;
+        }
+        .icon-head {
+            height: 40px;
+        }
+        .text-d {
+            margin-right: 10px;
+        }
+        .burger {
+            display: block;
+        }
+        .h-res {
+            height: 92px;
+            transition: 1s;
+        }
+        .overhid {
+            opacity: 0;
+        }
+        .hight-nav {
+            height: 320px;
+            transition: 1s;
+            overflow: hidden;
+        }
+    }
+    
+    @media (max-width: 890px) {
+        .n-head {
+            width: 197px;
+            animation: headline 2s 1;
+        }
+        @keyframes headline {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 197px;
+            }
+        }
+    }
+    
+    @media (max-width: 840px) {
+        .head-name {
+            margin-top: 3px;
+            margin-bottom: -1px;
+        }
+        .n-head {
+            width: 180px;
+            animation: headline 2s 1;
+        }
+        @keyframes headline {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 180px;
+            }
+        }
+    }
+    
+    @media (max-width: 770px) {
+        .n-head {
+            width: 190px;
+            animation: headline 2s 1;
+        }
+        @keyframes headline {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 190px;
+            }
+        }
+    }
+    
+    @media (max-width: 544px) {
+        .n-head {
+            width: 170px;
+            animation: headline 2s 1;
+        }
+        @keyframes headline {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 170px;
+            }
+        }
+    }
+    
+    @media (max-width: 425px) {
+        .n-head {
+            width: 165px;
+            animation: headline 2s 1;
+        }
+        @keyframes headline {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 165px;
+            }
+        }
+    }
+    
+    @media (max-width: 415px) {
+        .burger {
+            right: 6%;
+        }
+        .head-name {
+            margin-top: 7px;
+            margin-bottom: 6px;
+        }
+    }

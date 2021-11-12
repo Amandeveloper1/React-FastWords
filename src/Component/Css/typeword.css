@@ -195,3 +195,44 @@
     opacity: 0.5;
     text-decoration: none;
 }
+
+.restartshortcut {
+    margin-top: 10px;
+    margin-left: -30px;
+}
+
+@media (max-width: 1250px) {
+    .userdata {
+        font-size: 30px;
+    }
+    .userinputinfo {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .userinfo {
+        height: 86px;
+    }
+    .userdata {
+        font-size: 25px;
+    }
+    .timewid {
+        width: 137px;
+    }
+    .speedwid {
+        width: 146px;
+    }
+    .Wcwid {
+        width: 235px;
+    }
+    .Awwid {
+        width: 188px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .userinfo {
+        display: contents;
+    }
+}

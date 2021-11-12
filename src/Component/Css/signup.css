@@ -6,7 +6,6 @@
 .img-content {
     width: 400px;
     margin-top: 80px;
-    margin-left: 100px;
     border: 2px solid;
     padding: 30px;
     border-radius: 5px;
@@ -65,4 +64,98 @@
     color: white;
     margin-bottom: 20px;
     outline: none
+}
+
+@media (max-width: 1030px) {
+    .signup-logo {
+        width: 139px;
+        animation: signup-logos 3s 1;
+    }
+    @keyframes signup-logos {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 139px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .signup-logo {
+        width: 130px;
+        animation: signup-logos 3s 1;
+    }
+    @keyframes signup-logos {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 130px;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .signup-logo {
+        width: 124px;
+        animation: signup-logos 3s 1;
+    }
+    @keyframes signup-logos {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 124px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .signup-logo {
+        width: 117px;
+        animation: signup-logos 3s 1;
+    }
+    @keyframes signup-logos {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 117px;
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .signup-logo {
+        width: 111px;
+        animation: signup-logos 3s 1;
+    }
+    @keyframes signup-logos {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 111px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .img-content {
+        width: 300px;
+    }
+    .input-user {
+        width: 242px;
+    }
+}
+
+@media (max-width: 362px) {
+    .img-content {
+        width: 252px;
+        padding: 13px;
+    }
+    .input-user {
+        width: 210px;
+    }
 }

@@ -69,20 +69,22 @@ export default function Home(props) {
     return (
         <>
             <div className="back-content container">
-                <div className="content-site" data-aos="fade-right" data-aos-duration="2000">
-                    <h2 className="rainbow-text">Hi User,</h2>
-                    <div className="c-text-s">That the website help speed up your typing speed. </div>
-                    <p className="para-content">That the best opportunity to speed up your speed and participate in competition more information for so go in About and Competition section.</p>
-                    <div className="c-button-s">
-                        <Link to="/typeword" className="typewordsend" onClick={() => setnowporgress()}>
-                            <button className="glow-on-hover" type="button">
-                                Let's Type &#x2192;
-                            </button>
-                        </Link>
+                <div className="content-site" data-aos-once="true" data-aos="fade-right" data-aos-duration="2000">
+                    <div className="content-wid">
+                        <h2 className="rainbow-text">Hi User,</h2>
+                        <div className="c-text-s">That the website help speed up your typing speed. </div>
+                        <p className="para-content">That the best opportunity to speed up your speed and participate in competition more information for so go in About and Competition section.</p>
+                        <div className="c-button-s">
+                            <Link to="/typeword" className="typewordsend" onClick={() => setnowporgress()}>
+                                <button className="glow-on-hover" type="button">
+                                    Let's Type &#x2192;
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
-                <div className="img-content" data-aos="fade-left" data-aos-duration="1000">
-                    <div>
+                <div  className="res-set-login" data-aos-once="true" data-aos="fade-left" data-aos-duration="2000" >
+                    <div className="img-contentl">
                         <div>
                             <h2 className="login-logo">Login here</h2>
                             <div className="text-center">
@@ -90,8 +92,8 @@ export default function Home(props) {
                             </div>
                             <div className="text-center my-2">Or</div>
                             <form onSubmit={loginSubmit} className="login-f">
-                                <input type="email" className="input-user" id="email" value={credential.email} onChange={onChange} name="email" placeholder="Enter Email" />
-                                <input type="password" className="input-user" id="password" value={credential.password} onChange={onChange} name="password" placeholder="Password" />
+                                <input type="email" className="input-userl" id="email" value={credential.email} onChange={onChange} name="email" placeholder="Enter Email" />
+                                <input type="password" className="input-userl" id="password" value={credential.password} onChange={onChange} name="password" placeholder="Password" />
                                 <div className="text-center">
                                     <button disabled={credential.password.length < 4 || credential.email.length < 5} type="submit" className="btn third">Submit</button>
                                 </div>

@@ -100,7 +100,7 @@ export default function Signup(props) {
     return (
         <>
 
-            <div className="container signup-c mb-4" data-aos="fade-right" data-aos-duration="2000">
+            <div className="container signup-c mb-4" data-aos-once="true" data-aos="fade-right" data-aos-duration="2000">
                 <div className="img-content" >
                     <h2 className="signup-logo">Signup here</h2>
                     <div className="text-center">

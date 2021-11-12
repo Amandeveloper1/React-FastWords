@@ -1,6 +1,7 @@
 .back-content {
     display: flex;
     cursor: default;
+    justify-content: center;
 }
 
 .content-site {
@@ -112,7 +113,7 @@
     }
 }
 
-.img-content {
+.img-contentl {
     margin-top: 100px;
     margin-left: 100px;
     border: 2px solid;
@@ -163,7 +164,7 @@
     display: grid;
 }
 
-.input-user {
+.input-userl {
     background: transparent;
     border: none;
     border-radius: 5px;
@@ -173,4 +174,109 @@
     color: white;
     margin-bottom: 20px;
     outline: none
+}
+
+@media (max-width: 1010px) {
+    .back-content {
+        display: contents;
+    }
+    .content-site {
+        margin-top: 123px;
+        padding-left: 3px;
+        color: white;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .res-set-login {
+        display: flex;
+        justify-content: center;
+    }
+    .img-contentl {
+        margin-left: 0px;
+    }
+    .content-wid {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .login-logo {
+        width: 125px;
+        animation: login-logos 3s 1;
+    }
+    @keyframes login-logos {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 125px;
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    .login-logo {
+        width: 119px;
+        animation: login-logos 3s 1;
+    }
+    @keyframes login-logos {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 119px;
+        }
+    }
+}
+
+@media (max-width: 820px) {
+    .login-logo {
+        width: 114px;
+        animation: login-logos 3s 1;
+    }
+    @keyframes login-logos {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 114px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .login-logo {
+        width: 106px;
+        animation: login-logos 3s 1;
+    }
+    @keyframes login-logos {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 106px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .login-logo {
+        width: 99px;
+        animation: login-logos 3s 1;
+    }
+    @keyframes login-logos {
+        0% {
+            width: 0px;
+        }
+        100% {
+            width: 99px;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .input-userl {
+        width: 250px;
+    }
 }

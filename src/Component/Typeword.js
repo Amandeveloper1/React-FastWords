@@ -92,6 +92,12 @@ export default function Typeword(props) {
         let Active = document.getElementById('active');
         let activeElement = document.getElementById('now');
         let wordSec = document.getElementById('wordSec');
+        console.log(e);
+
+        if (e.key === 'Control') {
+            console.log('that is a shift.');
+            restartUserInterface();
+        }
 
         if (e.code === 'Backspace') {
 
@@ -178,7 +184,7 @@ export default function Typeword(props) {
         function getRandom(min, max) {
             return Math.random() * (max - min) + min;
         }
-        let rand = getRandom(0, 4)
+        let rand = getRandom(0, 5)
         let randvalue = parseInt(rand)
         let mySentence = nodea[randvalue].sentence;
         let my = mySentence;
@@ -237,7 +243,7 @@ export default function Typeword(props) {
         }
         setTimeout(() => {
             setWordNow();
-        }, 200);  
+        }, 200);
     }
 
     function getPoint() {
@@ -316,20 +322,22 @@ export default function Typeword(props) {
                     let cWrod = document.getElementById('cWrod')
                     let aWordd = document.getElementById('aWordd')
 
-                    let speed = document.getElementById('speed')
+                    // let speed = document.getElementById('speed')
                     let wordCount = document.getElementById('wordCount')
                     let allWord = document.getElementById('allWord')
                     let accurancy = document.getElementById('accurancy')
                     props.setnav('start');
-                    wpm.innerText = speed.innerText;
+
+                    let wordin = wordCount.innerText / 5;
+                    wpm.innerText = parseInt(wordin / 1);
                     cWrod.innerText = wordCount.innerText;
                     aWordd.innerText = allWord.innerText;
                     accurancy.innerText = parseInt(wordCount.innerText / allWord.innerText * 100) + '%';
 
                 } else {
-                    if (props.valueinv === 'notset') {
-                        props.setinv(nowinterval)
-                    }
+
+
+                    props.setinv(nowinterval)
 
                     timed.innerText = timed.innerText - 1;
 
@@ -355,8 +363,8 @@ export default function Typeword(props) {
     setTimeout(() => {
         let now = document.getElementById('wordSec');
         let nowinner = now.innerHTML.length;
-    
-        if (nowinner === 0 ) {
+
+        if (nowinner === 0) {
             let havetoclick = document.getElementById('havetoclick');
             havetoclick.click();
         }
@@ -366,12 +374,12 @@ export default function Typeword(props) {
         loadingfirst();
         let practiceUser = document.getElementById('p-u');
         let resultUser = document.getElementById('r-u');
-       
+
         practiceUser.classList.remove('d-none');
         resultUser.classList.add('d-none');
     }
 
-    const disabledAll = ()=>{
+    const disabledAll = () => {
         props.setnav('stop');
     }
 
@@ -379,18 +387,21 @@ export default function Typeword(props) {
         <>
             <div className="container" id="p-u">
                 <div className="userinfo" data-aos="fade-right" data-aos-duration="1000">
+
                     <div className="userdata timewid"  >
                         <div>   Time:-   </div> <p id="time" className="ps-2"> 60 </p>
                     </div>
                     <div className="userdata speedwid">
                         <div>  Speed:-  </div>  <p id="speed" className="ps-2"> 00 </p>
                     </div>
+
                     <div className="userdata Wcwid" >
                         <div> Currect Letters:-  </div>  <p id="wordCount" className="ps-2"> 00 </p>
                     </div>
                     <div className="userdata Awwid" >
                         <div>  All Letters:-  </div>  <p id="allWord" className="ps-2" > 00 </p>
                     </div>
+
                 </div>
                 <div className="userinputinfo" data-aos="fade-in" data-aos-duration="2000">
                     <div className="wordFrist">
@@ -402,6 +413,7 @@ export default function Typeword(props) {
                         <path fillRule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
                         <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
                     </svg>
+                    <p className="mt-2">Control - to restart test</p>
                 </div>
             </div>
 
@@ -442,7 +454,7 @@ export default function Typeword(props) {
                         </div>
                         <div className="score-f mt-3">
                             <div className="score-h-f">
-                                All Letters 
+                                All Letters
                             </div>
                             <div className="score-a-f" id="aWordd">
                                 100
@@ -455,8 +467,11 @@ export default function Typeword(props) {
 
                 <div className="container rou">
                     <div>
-                        <button onClick={restartUserInterface} className="btn third">Restart</button>
-                        <button className="btn third ms-2">Shear</button>
+                        <div>
+                            <button onClick={restartUserInterface} className="btn third">Restart</button>
+                            {/* <button className="btn third ms-2">Shear</button> */}
+                        </div>
+                        <p className="restartshortcut">Control - to restart test</p>
                     </div>
                 </div>
 
