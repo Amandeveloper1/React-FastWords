@@ -19,23 +19,20 @@ function App() {
   const [navstop, setnavstop] = useState('notset');
   const [stopinterval, setStopinterval] = useState('notset');
 
-  const [alert, setAlert] = useState(null);
-  const showAlert = (massage) => {
-    setAlert(massage)
-  }
+  const [alert, setAlert] = useState('notset');
 
   return (<>
   <ContentState>
     <Router>
       <LoadingBar color='yellowgreen' progress={progress} height={3} onLoaderFinished={() => setProgress(0)} />
 
-      <Alert alert={alert} showAlert={showAlert} />
+      <Alert alert={alert} setAlert={setAlert} />
 
       <Switch>
 
         <Route exact path="/">
           <Navbar progress={setProgress} />
-          <Home progress={setProgress} showAlert={showAlert} />
+          <Home progress={setProgress} setAlert={setAlert} />
           <Footer />
         </Route>
 
@@ -58,12 +55,12 @@ function App() {
 
         <Route exact path="/signup" >
           <Navbar progress={setProgress} />
-          <Signup showAlert={showAlert} />
+          <Signup setAlert={setAlert}/>
         </Route>
 
         <Route exact path="/account" >
           <Navbar progress={setProgress} />
-          <Account />
+          <Account setAlert={setAlert} />
           <Footer />
         </Route>
 

@@ -1,0 +1,17 @@
+.tryone-alert {
+    width: 400px;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 20px;
+    position: fixed;
+    color: yellowgreen;
+    top: 20px;
+    background: black;
+    left: 20px;
+}
+
+@media (max-width: 430px) {
+    .tryone-alert {
+        width: 80%;
+    }
+}

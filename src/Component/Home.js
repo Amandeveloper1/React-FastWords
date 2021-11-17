@@ -34,7 +34,7 @@ export default function Home(props) {
         if (json.success) {
             localStorage.setItem('token', json.authtoken)
             setCredential({ email: '', password: '' })
-            alert('Your are Login successfully');
+            props.setAlert('Your are Login successfully');
             history.push('/account');
         }
     }
@@ -57,7 +57,7 @@ export default function Home(props) {
             localStorage.setItem('token', json.authtoken)
             setCredential({ email: '', password: '' })
 
-            alert('Your are Login successfully');
+            props.setAlert('Your are Login successfully');
         }
     }
 

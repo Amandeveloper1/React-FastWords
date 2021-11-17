@@ -24,16 +24,15 @@ export default function Signup(props) {
             setCredential({password:'',otp:'' , cpassword:''})
             localStorage.clear();
             setCredential({otp:'',password:'',cpassword:''})
-            console.log('Your are Signup successfully','success');
             
-            alert('Your are Signup successfully');
+            props.setAlert('Your are Signup successfully');
         }
     }
+
     const onSignupFailure = (res)=>{
-        console.log('login Failure.', res);
+        props.setAlert('Some error are occuring please try again.');
     }
 
-  
     const onChange = (e) => {
         setCredential({ ...credential, [e.target.name]: e.target.value })
     }
@@ -56,7 +55,7 @@ export default function Signup(props) {
             // setCredential({ email: json.email, name: json.name })
             setCredential({email:'',name:''})
             
-            alert('Otp are send successfully');
+            props.setAlert('Otp are send successfully');
         }
     }
 
@@ -81,8 +80,7 @@ export default function Signup(props) {
                         setCredential({password:'',otp:'' , cpassword:''})
                         localStorage.clear();
                         setCredential({otp:'',password:'',cpassword:''})
-                        console.log('Your are Signup successfully','success');
-                        alert('Your are Signup successfully');
+                        props.setAlert('Your are Signup successfully');
                     }
                 }else{
                     console.log('invalid opt and opt are  not match');
@@ -94,7 +92,6 @@ export default function Signup(props) {
             console.log('That otp is invalid');
         }
     }
-
 
 
     return (
